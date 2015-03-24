@@ -8,7 +8,7 @@ Ext.Loader.setConfig({enabled: true});
 Ext.application({
     name: 'Bloom',
 
-    requires: [''],
+    requires: [],
     models: [],
 
     stores: [],
@@ -19,6 +19,7 @@ Ext.application({
     controllers: [
         'MainController',
         'TabsController',
+        'ServiceController',
         'AppointmentController'
     ],
     launch: function () {

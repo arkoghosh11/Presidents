@@ -26,12 +26,12 @@ Ext.define('Bloom.controller.AppointmentController', {
                 tap: this.pushNewViewOnToAppointment
             },
             appointmentView: {
-                back: this.showDetail
+                back: this.initializeListStore
             }
         });
 
     },
-    showDetail: function () {
+    initializeListStore: function () {
         this.redirectTo('view/appointmentView/loginView');
     },
     pushNewViewOnToAppointment: function (button) {

@@ -1,5 +1,7 @@
 /**
- * Created by Rono on 2/6/2015.
+ * @email arkoghosh@hotmail.com, meankur1@gmail.com
+ * @author Arko Ghosh, Ankur Bhardwaj
+ * Date: 8/5/12  Time: 12:15 PM
  */
 Ext.define("Bloom.view.service.ItemListView", {
 
@@ -8,33 +10,8 @@ Ext.define("Bloom.view.service.ItemListView", {
     xtype: 'itemListView',
     config: {
         itemId: 'itemListViewItemId',
-        itemTpl: '<div> <span style="width: 350px">{ITEM_NAME}</span> <span style="width: 300px">{ITEM_PRICE}</span></div>',
-        data: [
-            {
-                ITEM_NAME: 'Tommy',
-                ITEM_PRICE: '5'
-            },
-            {
-                ITEM_NAME: 'Rob',
-                ITEM_PRICE: '34'
-            },
-            {
-                ITEM_NAME: 'Ed',
-                ITEM_PRICE: '23.667'
-            },
-            {
-                ITEM_NAME: 'Jamie',
-                ITEM_PRICE: '45'
-            },
-            {
-                ITEM_NAME: 'Aaron',
-                ITEM_PRICE: '43.67'
-            },
-            {
-                ITEM_NAME: 'Dave',
-                ITEM_PRICE: '45'
-            }
-        ],
+        itemTpl: '<div> <span style="width: 350px">{item_name}</span> <span style="width: 300px">{item_price}</span></div>',
+        store: Ext.create("Bloom.store.ItemStore"),
         items: [
             {
                 xtype: 'button',
@@ -45,6 +22,5 @@ Ext.define("Bloom.view.service.ItemListView", {
             }
         ]
     }
-
 
 });

@@ -1,0 +1,97 @@
+{
+    "count": "2",
+    "is_error": "false",
+    "payload": {
+        "@type": "shopsPayload",
+        "shops": {
+            "shop": [
+                {
+                    "address": {
+                        "address1": "Default",
+                        "address2": "Default",
+                        "addressId": "0",
+                        "city": "Default",
+                        "district": "Default",
+                        "state": "Default",
+                        "zipCode": "0"
+                    },
+                    "items": {
+                        "item": {
+                            "bought_date": "2015-02-25T01:00:00-05:00",
+                            "bought_from": "default",
+                            "item_id": "0",
+                            "item_name": "default_name",
+                            "item_price": "0.0",
+                            "item_price_currency": "Dollar",
+                            "item_sub_type": "default_type",
+                            "item_type": "default_type",
+                            "quantity": "0.0",
+                            "quantity_type": "unit",
+                            "weight": "0.0",
+                            "weighted_unit": "kg"
+                        }
+                    },
+                    "shop_id": "0",
+                    "shop_name": "default",
+                    "shop_own_id": "0",
+                    "shop_web_link": "default",
+                    "working_hours": {
+                        "working_hour": {
+                            "day": "Monday",
+                            "end_time": "80:00",
+                            "is_holiday": "false",
+                            "is_closed": "false",
+                            "start_time": "00:00",
+                            "is_weekend": "false",
+                            "working_hour_id": "0"
+                        }
+                    }
+                },
+                {
+                    "address": {
+                        "address1": "test",
+                        "address2": "test",
+                        "addressId": "1",
+                        "city": "test_city",
+                        "district": "test_district",
+                        "state": "test_state",
+                        "zipCode": "99999"
+                    },
+                    "items": {
+                        "item": {
+                            "bought_date": "2015-02-25T01:00:00-05:00",
+                            "bought_from": "test",
+                            "item_id": "1",
+                            "item_name": "test",
+                            "item_price": "2.0",
+                            "item_price_currency": "Rupee",
+                            "item_sub_type": "test",
+                            "item_type": "test_type",
+                            "quantity": "1.0",
+                            "quantity_type": "unit",
+                            "weight": "1.0",
+                            "weighted_unit": "pound"
+                        }
+                    },
+                    "shop_id": "1",
+                    "shop_name": "test",
+                    "shop_own_id": "1111",
+                    "shop_web_link": "test",
+                    "working_hours": {
+                        "working_hour": {
+                            "day": "test",
+                            "end_time": "11:59",
+                            "is_holiday": "true",
+                            "is_closed": "true",
+                            "start_time": "00:00",
+                            "is_weekend": "true",
+                            "working_hour_id": "1"
+                        }
+                    }
+                }
+            ]
+        },
+        "shop_count": "2"
+    }
+}
+

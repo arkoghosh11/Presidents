@@ -9,13 +9,17 @@ Ext.define('Bloom.view.service.ServiceView', {
     xtype: 'serviceView',
     requires: [
         'Bloom.view.ListView',
+        'Bloom.view.service.ShopListView',
         'Bloom.view.service.ItemListView',
         'Bloom.view.contact.ContactInnerView',
-        'Bloom.view.DynamicContainer'
+        'Bloom.view.DynamicContainer',
+        'Bloom.store.ShopStore',
+        'Bloom.store.ItemStore'
     ],
     config: {
         itemId: 'serviceViewId',
         tabBarPosition: 'left',
+        activeItem: 1,
         items: [
             {
                 title: 'Items',
@@ -23,8 +27,8 @@ Ext.define('Bloom.view.service.ServiceView', {
                 badgeText: '2'
             },
             {
-                title: 'ECG',
-                xtype: 'dynamicContainer'
+                title: 'Shops',
+                xtype: 'shopListView'
             },
             {
                 title: 'Master Health',
