@@ -12,5 +12,6 @@ Ext.define('Bloom.view.DynamicContainer', {
     config: {
         title: 'Dynamic Container',
         itemId: 'dynamicContainerId'
+        //cls:'dynamic-container'  // todo make customer dynamic container cls and enable here
     }
 });

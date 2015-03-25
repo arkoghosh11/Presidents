@@ -9,12 +9,14 @@ Ext.define('Bloom.view.service.ServiceView', {
     xtype: 'serviceView',
     requires: [
         'Bloom.view.ListView',
-        'Bloom.view.service.ShopListView',
+        'Bloom.view.service.ShopMainViewContainer',
+        'Bloom.view.service.shopViews.ShopHeaderContainer',
+        'Bloom.view.service.shopViews.ShopHeaderEditableOptionsContainer',
+        'Bloom.view.service.shopViews.ShopListView',
+
         'Bloom.view.service.ItemListView',
         'Bloom.view.contact.ContactInnerView',
         'Bloom.view.DynamicContainer',
-        'Bloom.store.ShopStore',
-        'Bloom.store.ItemStore'
     ],
     config: {
         itemId: 'serviceViewId',
@@ -28,7 +30,7 @@ Ext.define('Bloom.view.service.ServiceView', {
             },
             {
                 title: 'Shops',
-                xtype: 'shopListView'
+                xtype: 'shopMainViewContainer'
             },
             {
                 title: 'Master Health',

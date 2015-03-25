@@ -15,7 +15,10 @@ Ext.define('Bloom.view.MainContainer', {
         'Bloom.view.contact.ContactView',
         'Bloom.view.service.ServiceView',
         'Bloom.view.home.HomeView',
-        'Bloom.view.AppointmentView'
+        'Bloom.view.AppointmentView',
+
+        //'Bloom.store.ShopStore',
+        //'Bloom.store.ItemStore'
     ],
 
     config: {

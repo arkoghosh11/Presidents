@@ -38,6 +38,11 @@ Ext.define('Bloom.controller.TabsController', {
         });
 
     },
+
+    /**
+     * This method is to change view with STouch Routing capabilities
+     * @param button
+     */
     changeView: function (button) {
 
         if (button.getText() == 'Services') {
@@ -53,15 +58,26 @@ Ext.define('Bloom.controller.TabsController', {
             this.redirectTo('view/appointmentView/loginView');
         }
     },
+
+    /**
+     * This method is to set the current view with tabs
+     * @param dynamicContainer
+     * @param viewName
+     */
     setActiveItemAccordingToTabButtons: function (dynamicContainer, viewName) {
 
+        //console.log(dynamicContainer.query('.' + viewName), dynamicContainer.query('.' + viewName).length, viewName);
         if (dynamicContainer.query('.' + viewName).length < 1) {
-            dynamicContainer.add(
+            try {
+                dynamicContainer.add(
                 {
                     xtype: viewName,
                     title: viewName
                 }
-            );
+                );
+            } catch (error) {
+                Ext.Msg.alert("Error", "Unknown Error Occurred", null, this);
+            }
         }
         dynamicContainer.setActiveItem(dynamicContainer.query('.' + viewName)[0]);
     }

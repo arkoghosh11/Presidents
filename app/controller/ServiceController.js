@@ -21,10 +21,14 @@ Ext.define("Bloom.controller.ServiceController", {
 
         refs: {
             shopListView: 'shopListView',
-            itemListView: 'itemListView'
+            itemListView: 'itemListView',
+            createShopAction: 'button[action=createShopAction]',
+            editShopAction: 'button[action=editShopAction]',
+            deleteShopAction: 'button[action=deleteShopAction]'
         },
         tabsController: '',
-        appointmentController: ''
+        appointmentController: '',
+        shopEditableOptionsButton: null
     },
     init: function () {
 
@@ -40,7 +44,17 @@ Ext.define("Bloom.controller.ServiceController", {
             itemListView: {
                 initialize: this.initializeListStore,
                 itemtap: this.displayOnTap
+            },
+            createShopAction: {
+                tap: this.handleButtonTap
+            },
+            editShopAction: {
+                tap: this.handleButtonTap
+            },
+            deleteShopAction: {
+                tap: this.handleButtonTap
             }
+
         });
     },
 
@@ -74,7 +88,42 @@ Ext.define("Bloom.controller.ServiceController", {
      */
     displayOnTap: function (dataview, index, target, record) {
 
-        Ext.Msg.alert("Dataview Tap", "Index of tapped record is " + index)
+        Ext.Msg.alert("Dataview Tap", "Index of tapped record is " + index);
 
+    },
+
+    /**
+     * This method is to handle the buttons on the second header inside shop tab
+     * @param button{Button}
+     */
+    handleButtonTap: function (button) {
+
+        this.setShopEditableOptionsButton(button);
+        Ext.Msg.alert("Button", "Button Tapped is " + button.getText(), this.createOrShowPopUpView, this);
+    },
+
+    /**
+     *
+     *
+     */
+    createOrShowPopUpView: function () {
+
+        var button = this.getShopEditableOptionsButton();
+        if (button != null && button.getText != null && button.getText().toLowerCase() == "create") {
+
+            var popUpContainer = Ext.Viewport.query(".popUpContainer")[0];
+            if (popUpContainer == null || !popUpContainer.isXType("popUpContainer", true)) {
+                popUpContainer = Ext.create("Bloom.view.service.popUpViews.PopUpContainer",
+                    {
+                        name: 'popUpContainerName',
+                        html: 'PopUp Add Container'
+                    });
+            }
+            var customFormPanel = Ext.create("Bloom.view.service.popUpViews.PopupFormPanel");
+            customFormPanel.createShopFields();
+            //popUpContainer.add(customFormPanel);
+            //Ext.Viewport.add(popUpContainer);
+            popUpContainer.setHidden(false);
+        }
     }
 });

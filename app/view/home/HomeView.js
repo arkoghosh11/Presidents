@@ -5,16 +5,19 @@
  */
 Ext.define('Bloom.view.home.HomeView', {
 
-    xtype: 'homeView',
     extend: 'Ext.Container',
+    requires: ['Bloom.view.DynamicContainer'],
+    xtype: 'homeView',
     config: {
         layout: 'fit',
         //cls : 'x-headeredlist',
+
+        scrollable: true,
         items: [
 
             {
-                xtype: 'container',
-                //layout: 'vbox',
+                xtype: 'dynamicContainer',
+                layout: 'fit',
                 top: '1%',
                 left: '40%',
                 html: '<div style=" color:#e22a25; font-family:Helvetica Neue, Arial, Helvetica, sans-serif; font-size:2em">Welcome to Home Page</div>'

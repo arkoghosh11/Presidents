@@ -51,6 +51,7 @@ Ext.define('Bloom.controller.MainController', {
         if (this.getMainContainer() == null) {
             mainView = Ext.create('Bloom.view.MainContainer');
         }
+
         var container = Ext.create('Ext.Container', {
             layout: 'fit',
             fullscreen: true
